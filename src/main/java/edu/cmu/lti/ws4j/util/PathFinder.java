@@ -38,8 +38,7 @@ public class PathFinder {
 	 * 
 	 * @param synset1
 	 * @param synset2
-	 * @param pos
-	 * @param mode
+	 * @param tracer
 	 * @return A list of all paths, sorted by path length in ascending order.
 	 *         The format for each item in the list is a reference to an array
 	 *         that has the format: [$top, $length, [@synsets_list]] where @synset_list
@@ -172,7 +171,7 @@ public class PathFinder {
 	 * the synset. Each hypernym tree is an array of offsets.
 	 * 
 	 * @param synset
-	 * @param mode
+	 * @param history
 	 */
 	public List<List<String>> getHypernymTrees(String synset, Set<String> history) {
 		WS4JConfiguration.getInstance().setCache(false);

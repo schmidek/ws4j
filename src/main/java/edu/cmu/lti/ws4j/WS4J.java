@@ -36,7 +36,7 @@ public class WS4J extends JAWJAW {
 	
 	/**
 	 * Calculates the Hirst–St-Onge relatedness score between two synsets. 
-	 * Following definition is cited from (Budanitsky & Hirst, 2001).
+	 * Following definition is cited from (Budanitsky and Hirst, 2001).
 	 * <blockquote>
 	 * Hirst–St-Onge: The idea behind Hirst and St-Onge’s 
 	 * (1998) measure of semantic relatedness is that two lexicalized 
@@ -66,7 +66,7 @@ public class WS4J extends JAWJAW {
 	
 	/**
 	 * Calculates the Leacock–Chodorow similarity score between two synsets. 
-	 * Following definition is cited from (Budanitsky & Hirst, 2001).
+	 * Following definition is cited from (Budanitsky and Hirst, 2001).
 	 * <blockquote>
 	 * Leacock–Chodorow: Leacock and Chodorow (1998) 
 	 * also rely on the length len(c1; c2) of the shortest path between 
@@ -87,7 +87,7 @@ public class WS4J extends JAWJAW {
 	
 	/**
 	 * Calculates the Resnik's similarity score between two synsets.
-	 * Following definition is cited from (Budanitsky & Hirst, 2001).
+	 * Following definition is cited from (Budanitsky and Hirst, 2001).
 	 * <blockquote>
 	 * Resnik: Resnik’s (1995) approach was, to our knowledge,
 	 * the first to bring together ontology and corpus.
@@ -112,7 +112,7 @@ public class WS4J extends JAWJAW {
 	
 	/**
 	 * Calculates the Jiang-Conrath distance score between two synsets.
-	 * Following definition is cited from (Budanitsky & Hirst, 2001).
+	 * Following definition is cited from (Budanitsky and Hirst, 2001).
 	 * <blockquote>
 	 * Jiang–Conrath: Jiang and Conrath’s (1997) approach
 	 * also uses the notion of information content, but in the
@@ -135,7 +135,7 @@ public class WS4J extends JAWJAW {
 	
 	/**
 	 * Calculates the Lin's similarity score between two synsets.
-	 * Following definition is cited from (Budanitsky & Hirst, 2001).
+	 * Following definition is cited from (Budanitsky and Hirst, 2001).
 	 * <blockquote>
 	 * Lin: Lin’s (1998) similarity measure follows from his
 	 * theory of similarity between arbitrary objects. It uses the
@@ -175,7 +175,7 @@ public class WS4J extends JAWJAW {
 
 	/**
 	 * Computing semantic relatedness of word senses using 
-	 * the edge counting method of the of Wu & Palmer (1994)
+	 * the edge counting method of the of Wu and Palmer (1994)
 	 * @param word1 word lemma in Japanese or English
 	 * @param word2 word lemma in Japanese or English
 	 * @return semantic relatedness of two words

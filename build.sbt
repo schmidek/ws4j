@@ -13,8 +13,13 @@ crossPaths        := false
 autoScalaLibrary  := false
 
 libraryDependencies ++= Seq(
+  "de.sciss"     % "jawjaw"          % "0.1.0-SNAPSHOT",
   "com.novocode" % "junit-interface" % "0.11" % "test"
 )
+
+// cf. http://www.scala-sbt.org/0.13.5/docs/Detailed-Topics/Classpaths.html
+unmanagedClasspath in Runtime += baseDirectory.value / "config"
+unmanagedClasspath in Test    += baseDirectory.value / "config"
 
 homepage          := Some(url(s"https://github.com/Sciss/${name.value}"))
 

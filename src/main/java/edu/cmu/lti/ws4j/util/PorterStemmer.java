@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 /**
  * Ported from Perl version of Porter Stemmer 
  * 
- * > Perl implementation of the porter stemming algorithm
- * > described in the paper: "An algorithm for suffix stripping, M F Porter"
- * > http://www.muscat.com/~martin/stem.html
- * > 
- * > Daniel van Balen (vdaniel@ldc.usb.ve)
- * > 
- * > October-1999
+ * - Perl implementation of the porter stemming algorithm
+ * - described in the paper: "An algorithm for suffix stripping, M F Porter"
+ * - http://www.muscat.com/~martin/stem.html
+ * -
+ * - Daniel van Balen (vdaniel@ldc.usb.ve)
+ * -
+ * - October-1999
  * 
  * @author hideki
  *

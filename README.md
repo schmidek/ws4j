@@ -4,6 +4,9 @@ This project was exported from the original [Google Code Location](http://code.g
 The purpose is to publish an artifact to Maven Central. The repository has been changed to
 build with sbt instead of Maven.
 
+To run the tests, download http://nlpwww.nict.go.jp/wn-ja/data/1.1/wnjpn.db.gz
+and unzip the `.db` file into the `config` directory.
+
 The original author is Hideki Shima. Below is the original README:
 
 ----
@@ -88,30 +91,30 @@ When using the WS4J jar package from other projects, make sure to
 also include depending libraries, i.e. junit, sqlite-jdbc, jawjaw.
 In maven's pom file, these dependencies can be written such as: 
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.xerial</groupId>
-      <artifactId>sqlite-jdbc</artifactId>
-      <version>3.7.2</version>
-    </dependency>
-    <dependency>
-      <groupId>edu.cmu.lti</groupId>
-      <artifactId>jawjaw</artifactId>
-      <version>1.0.0</version>
-      <scope>system</scope> 
-      <systemPath>${basedir}/lib/jawjaw.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>edu.cmu.lti</groupId>
-      <artifactId>ws4j</artifactId>
-      <version>1.0.0</version>
-      <scope>system</scope> 
-      <systemPath>${basedir}/lib/ws4j.jar</systemPath>
-    </dependency>
-  </dependencies> 
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.0</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.7.2</version>
+      </dependency>
+      <dependency>
+        <groupId>edu.cmu.lti</groupId>
+        <artifactId>jawjaw</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope> 
+        <systemPath>${basedir}/lib/jawjaw.jar</systemPath>
+      </dependency>
+      <dependency>
+        <groupId>edu.cmu.lti</groupId>
+        <artifactId>ws4j</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope> 
+        <systemPath>${basedir}/lib/ws4j.jar</systemPath>
+      </dependency>
+    </dependencies> 
