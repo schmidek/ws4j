@@ -1,6 +1,17 @@
+# WS4J
+
+This project was exported from the original [Google Code Location](http://code.google.com/p/ws4j).
+The purpose is to publish an artifact to Maven Central. The repository has been changed to
+build with sbt instead of Maven.
+
+The original author is Hideki Shima. Below is the original README:
+
+----
+
 Thanks for downloading WS4J (http://code.google.com/p/ws4j).
 
----- Introduction ----
+## Introduction
+
 This software provides APIs for several semantic relatedness 
 algorithms for, in theory, any WordNet instance. The codebase
 has been mostly ported from WordNet-Similarity-2.05 
@@ -13,8 +24,10 @@ WordNet (http://nlpwww.nict.go.jp/wn-ja/index.en.html)
 with which you can analyze English and Japanese (in 
 Princeton WordNet 3.0 compatible synsets).
 
----- Preparation ----
+## Preparation
+
 By default, requirement for compilation are:
+
  - JDK 5+ 
  - Maven 2 (or "m2e" plugin on eclipse)
  - JAWJAW (Java Wrapper for NICT Japanese/English WordNet; http://code.google.com/p/jawjaw).
@@ -22,7 +35,7 @@ By default, requirement for compilation are:
 It's NORMAL that you see a build error in eclipse as JAWJAW is 
 not contained in lib/ for the source code distribution.
 Before using WS4J, compile and package JAWJAW and put the
-jar file under the lib directory in this project: ./lib/jawjaw.jar
+jar file under the lib directory in this project: `./lib/jawjaw.jar`
 Until you do this, WS4J does not compile.
 
 When packaging JAWJAW, you may want to consider enabling
@@ -32,41 +45,44 @@ In case you want to use another WordNet API + instance,
 implement a WordNet wrapper following the real example for NICT wordnet + JAWJAW 
 in edu.cmu.lti.lexical_db.NictWordNet
 
----- Testing ----
+## Testing
+
 You can verify that the preparation is correctly done by running
 JUnit test cases. 
 
 Test cases:
-  src/test/*
+  `src/test/*`
    
 Maven command:
-  mvn test
+  `mvn test`
 
 Launch file for Eclipse + m2e:
-  launches/WS4J_Run_All_JUnitTests.launch
+  `launches/WS4J_Run_All_JUnitTests.launch`
 
 The expected results from the test cases are compatible with the 
 original WordNet::Similarity in Perl (http://wn-similarity.sourceforge.net/).
 
----- Packaging ----
-To customize WS4J, edit src/main/config/similarity.conf.
+## Packaging
+
+To customize WS4J, edit `src/main/config/similarity.conf`.
 
 Here's a way to create a jar file including resource and config files.
 
 Maven command:
-  mvn install
+  `mvn install`
 
 Launch file for Eclipse + m2e:
-  launches/WS4J_package_m2e.launch
+  `launches/WS4J_package_m2e.launch`
 
 Output jar file (may need a refresh on the directory):
-  target/ws4j.jar
+  `target/ws4j.jar`
   
----- Using WS4J ----
+## Using WS4J
+
 See working examples in the following files.
 
 Demos:
-  src/main/java/edu/cmu/lti/ws4j/demo/SimilarityCalculationDemo.java
+  `src/main/java/edu/cmu/lti/ws4j/demo/SimilarityCalculationDemo.java`
 
 When using the WS4J jar package from other projects, make sure to 
 also include depending libraries, i.e. junit, sqlite-jdbc, jawjaw.
@@ -99,4 +115,3 @@ In maven's pom file, these dependencies can be written such as:
       <systemPath>${basedir}/lib/ws4j.jar</systemPath>
     </dependency>
   </dependencies> 
- 

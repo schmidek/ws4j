@@ -1,0 +1,63 @@
+name              := "ws4j"
+
+organization      := "de.sciss"
+
+version           := "0.1.0-SNAPSHOT"
+
+scalaVersion      := "2.11.7"
+
+licenses          := Seq("GPL v2+" -> url("https://www.gnu.org/licenses/gpl-2.0.txt"))
+
+crossPaths        := false
+
+autoScalaLibrary  := false
+
+libraryDependencies ++= Seq(
+  "com.novocode" % "junit-interface" % "0.11" % "test"
+)
+
+homepage          := Some(url(s"https://github.com/Sciss/${name.value}"))
+
+description       := "WordNet Similarity for Java provides an API for several Semantic Relatedness/Similarity algorithms"
+
+lazy val commonJavaOptions = Seq("-source", "1.6")
+
+javacOptions        := commonJavaOptions ++ Seq("-target", "1.6", "-g", "-Xlint:deprecation")
+
+javacOptions in doc := commonJavaOptions  // cf. sbt issue #355
+
+// ---- publishing to Maven Central ----
+publishMavenStyle := true
+
+publishTo := Some(
+  if (isSnapshot.value)
+    "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+  else
+    "Sonatype Releases"  at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+)
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := { val n = name.value
+  <scm>
+    <url>git@github.com:Sciss/{n}.git</url>
+    <connection>scm:git:git@github.com:Sciss/{n}.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>hideki.shima</id>
+      <name>Hideki Shima</name>
+      <url>http://www.cs.cmu.edu/~hideki</url>
+    </developer>
+    <developer>
+      <id>sciss</id>
+      <name>Hanns Holger Rutz</name>
+      <url>http://www.sciss.de</url>
+    </developer>
+    <developer>
+      <id>alex-rind</id>
+    </developer>
+  </developers>
+}
