@@ -2,7 +2,7 @@ name              := "ws4j"
 
 organization      := "de.sciss"
 
-version           := "0.1.0-SNAPSHOT"
+version           := "0.1.0"
 
 scalaVersion      := "2.11.7"
 
@@ -13,7 +13,7 @@ crossPaths        := false
 autoScalaLibrary  := false
 
 libraryDependencies ++= Seq(
-  "de.sciss"     % "jawjaw"          % "0.1.0-SNAPSHOT",
+  "de.sciss"     % "jawjaw"          % "0.1.0",
   "com.novocode" % "junit-interface" % "0.11" % "test"
 )
 
@@ -60,9 +60,6 @@ pomExtra := { val n = name.value
       <id>sciss</id>
       <name>Hanns Holger Rutz</name>
       <url>http://www.sciss.de</url>
-    </developer>
-    <developer>
-      <id>alex-rind</id>
     </developer>
   </developers>
 }
