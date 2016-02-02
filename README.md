@@ -13,6 +13,10 @@ and unzip the `.db` file into the `config` directory.
 
 The original author is Hideki Shima. Below is the original README:
 
+## contributing
+
+Please see the file [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ----
 
 Thanks for downloading WS4J (http://code.google.com/p/ws4j).
