@@ -1,47 +1,20 @@
 package edu.cmu.lti.lexical_db;
 
-import java.io.File;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.stream.Collectors;
-
-import edu.cmu.lti.jawjaw.db.SynlinkDAO;
-import edu.cmu.lti.jawjaw.db.SynsetDAO;
-import edu.cmu.lti.jawjaw.db.SynsetDefDAO;
-import edu.cmu.lti.jawjaw.pobj.Lang;
-import edu.cmu.lti.jawjaw.pobj.Link;
 import edu.cmu.lti.jawjaw.pobj.POS;
-import edu.cmu.lti.jawjaw.pobj.Synlink;
-import edu.cmu.lti.jawjaw.pobj.SynsetDef;
 import edu.cmu.lti.jawjaw.util.Configuration;
-import edu.cmu.lti.jawjaw.util.WordNetUtil;
 import edu.cmu.lti.lexical_db.data.Concept;
-import edu.cmu.lti.ws4j.util.PorterStemmer;
-import edu.cmu.lti.ws4j.util.WS4JConfiguration;
 import org.jdbi.v3.core.Jdbi;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MemoryWordNet implements ILexicalDatabase {
 
 	private Map<String,List<String>> lemmaAndPosToSynsets;
 	private Map<String,List<String>> hypeMap;
 
-	private String getDB(){
-		URL uri = MemoryWordNet.class.getClassLoader().getResource(Configuration.getInstance().getWordnet());
-		try {
-			return new File(uri.toURI()).getPath();
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 	public MemoryWordNet(){
-		String DB = "jdbc:sqlite:" + getDB();
-		System.out.println(DB);
+		String DB = "jdbc:sqlite::resource:" + Configuration.getInstance().getWordnet();
 		Jdbi jdbi = Jdbi.create(DB);
 		lemmaAndPosToSynsets = new HashMap<>();
 		jdbi.useHandle(handle -> {
