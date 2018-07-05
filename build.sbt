@@ -14,7 +14,8 @@ autoScalaLibrary  := false
 
 libraryDependencies ++= Seq(
   "de.sciss"     % "jawjaw"          % "0.1.0",
-  "com.novocode" % "junit-interface" % "0.11" % "test"
+  "com.novocode" % "junit-interface" % "0.11" % "test",
+  "org.jdbi"     % "jdbi3-sqlobject" % "3.0.1"
 )
 
 // cf. http://www.scala-sbt.org/0.13.5/docs/Detailed-Topics/Classpaths.html
@@ -25,9 +26,9 @@ homepage          := Some(url(s"https://github.com/Sciss/${name.value}"))
 
 description       := "WordNet Similarity for Java provides an API for several Semantic Relatedness/Similarity algorithms"
 
-lazy val commonJavaOptions = Seq("-source", "1.6")
+lazy val commonJavaOptions = Seq("-source", "1.8")
 
-javacOptions        := commonJavaOptions ++ Seq("-target", "1.6", "-g", "-Xlint:deprecation")
+javacOptions        := commonJavaOptions ++ Seq("-target", "1.8", "-g", "-Xlint:deprecation")
 
 javacOptions in doc := commonJavaOptions  // cf. sbt issue #355
 
